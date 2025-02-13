@@ -105,6 +105,7 @@ void kernel_main(void) {
             putnumber(res);
             break;
         case '3':
+            putstring("enter counter index: ");
             res = getnumber();
             ret = sbi_call(res, 0, 0, 0, 0, 0, 1, 0x504D55);
             if (ret.error) {
@@ -122,7 +123,7 @@ void kernel_main(void) {
             break;
         case '4':
             putstring("exiting...\n");
-            __asm__ __volatile__("wfi");
+            sbi_call(0, 0, 0, 0, 0, 0, 0, 0x8);
         default:
             break;
         }
