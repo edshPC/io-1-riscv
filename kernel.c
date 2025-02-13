@@ -83,6 +83,7 @@ void kernel_main(void) {
 "3. Get details of a counter\n"
 "4. System Shutdown\n");
     long res, minor, major;
+    struct sbiret ret;
     
     for (;;) {
         putstring("\n> ");
@@ -105,6 +106,19 @@ void kernel_main(void) {
             break;
         case '3':
             res = getnumber();
+            ret = sbi_call(res, 0, 0, 0, 0, 0, 1, 0x504D55);
+            if (ret.error) {
+                putstring("this counter is not exists");
+                break;
+            }
+            res = ret.value;
+            putstring("CSR number: ");
+            putnumber(res & 0xFFF);
+            putstring("\nWidth: ");
+            putnumber((res & 0x3F0000) >> 12);
+            putstring("\nType: ");
+            putstring((res >> 31) ? "firmware" : "hardware");
+
             break;
         case '4':
             putstring("exiting...\n");
