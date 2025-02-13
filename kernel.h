@@ -12,5 +12,7 @@ struct sbiret sbi_call(long arg0, long arg1, long arg2, long arg3, long arg4, lo
 
 void putchar(char ch);
 char getchar(void);
-
+void getstring(char* buf);
 void putstring(const char* str);
+void putnumber(long num);
+long getnumber(void);

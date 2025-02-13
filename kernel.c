@@ -29,7 +29,19 @@ char getchar(void) {
     while (c == (char)-1) {
         c = sbi_call(0, 0, 0, 0, 0, 0, 0, 2).error;
     }
+    putchar(c);
     return c;
+}
+
+void getstring(char* buf) {
+    int i = 0;
+    char c = getchar();
+    while (c != 13) {
+        buf[i++] = c;
+        c = getchar();
+    }
+    buf[i] = 0;
+    putchar('\n');
 }
 
 void putstring(const char* s) {
@@ -54,6 +66,16 @@ void putnumber(long num) {
     }
 }
 
+long getnumber(void) {
+    char buf[16];
+    getstring(buf);
+    long res = 0;
+    for (int i = 0; buf[i] != '\0'; i++) {
+        res = res * 10 + (buf[i] - '0');
+    }
+    return res;
+}
+
 void kernel_main(void) {
     putstring("\n\nPick function:\n"
 "1. Get SBI specification version\n"
@@ -65,7 +87,6 @@ void kernel_main(void) {
     for (;;) {
         putstring("\n> ");
         char c = getchar();
-        putchar(c);
         putchar('\n');
         switch (c) {
         case '1':
@@ -83,9 +104,7 @@ void kernel_main(void) {
             putnumber(res);
             break;
         case '3':
-            res = sbi_call(0, 0, 0, 0, 0, 0, 0, 0x504D55).value;
-            putstring("number of counters: ");
-            putnumber(res);
+            res = getnumber();
             break;
         case '4':
             putstring("exiting...\n");
