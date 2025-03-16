@@ -1,7 +1,7 @@
      VMA      LMA     Size Align Out     In      Symbol
        0        0 80200000     1 . = 0x80200000
 80200000 80200000      a4e     4 .text
-80200000 80200000        e     2         /tmp/kernel-54a95e.o:(.text.boot)
+80200000 80200000        e     2         /tmp/kernel-d4eef3.o:(.text.boot)
 80200000 80200000        0     1                 
 80200000 80200000        0     1                 
 80200000 80200000        0     1                 
@@ -9,7 +9,7 @@
 80200000 80200000        e     1                 boot
 8020000e 8020000e        0     1                 
 8020000e 8020000e        0     1                 
-80200010 80200010      a3e     4         /tmp/kernel-54a95e.o:(.text)
+80200010 80200010      a3e     4         /tmp/kernel-d4eef3.o:(.text)
 80200010 80200010        0     1                 
 80200010 80200010        0     1                 
 80200010 80200010        0     1                 
@@ -370,32 +370,32 @@
 80200b34 80200b34    20000     1 . += 128 * 1024
 80220b34 80220b34        0     1 __stack_top = .
        0        0      f40     1 .debug_loclists
-       0        0      f40     1         /tmp/kernel-54a95e.o:(.debug_loclists)
+       0        0      f40     1         /tmp/kernel-d4eef3.o:(.debug_loclists)
        c        c        0     1                 
        0        0      1ae     1 .debug_abbrev
-       0        0      1ae     1         /tmp/kernel-54a95e.o:(.debug_abbrev)
+       0        0      1ae     1         /tmp/kernel-d4eef3.o:(.debug_abbrev)
        0        0     1926     1 .debug_info
-       0        0     1926     1         /tmp/kernel-54a95e.o:(.debug_info)
+       0        0     1926     1         /tmp/kernel-d4eef3.o:(.debug_info)
        0        0       8f     1 .debug_rnglists
-       0        0       8f     1         /tmp/kernel-54a95e.o:(.debug_rnglists)
+       0        0       8f     1         /tmp/kernel-d4eef3.o:(.debug_rnglists)
        c        c        0     1                 
        0        0       c4     1 .debug_str_offsets
-       0        0       c4     1         /tmp/kernel-54a95e.o:(.debug_str_offsets)
+       0        0       c4     1         /tmp/kernel-d4eef3.o:(.debug_str_offsets)
        8        8        0     1                 
        0        0      14b     1 .debug_str
        0        0      14b     1         <internal>:(.debug_str)
        0        0       fc     1 .debug_addr
-       0        0       fc     1         /tmp/kernel-54a95e.o:(.debug_addr)
+       0        0       fc     1         /tmp/kernel-d4eef3.o:(.debug_addr)
        8        8        0     1                 
        0        0       42     1 .comment
        0        0       42     1         <internal>:(.comment)
        0        0       2b     1 .riscv.attributes
-       0        0       2b     1         /tmp/kernel-54a95e.o:(.riscv.attributes)
+       0        0       2b     1         /tmp/kernel-d4eef3.o:(.riscv.attributes)
        0        0       d0     4 .debug_frame
-       0        0       d0     4         /tmp/kernel-54a95e.o:(.debug_frame)
+       0        0       d0     4         /tmp/kernel-d4eef3.o:(.debug_frame)
        0        0        0     1                 
        0        0      762     1 .debug_line
-       0        0      762     1         /tmp/kernel-54a95e.o:(.debug_line)
+       0        0      762     1         /tmp/kernel-d4eef3.o:(.debug_line)
        0        0        0     1                 .Lline_table_start0
        0        0       30     1 .debug_line_str
        0        0       30     1         <internal>:(.debug_line_str)
